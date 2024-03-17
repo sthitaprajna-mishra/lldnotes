@@ -2,9 +2,9 @@
 
 ## Factory Patterns
 
-- **Simple Factory**
-- **Factory Method**
-- **Abstract Factory**
+- [**Simple Factory**](#simple-factory)
+- [**Factory Method**](#factory-method)
+- [**Abstract Factory**](#abstract-factory)
 
 ### Simple Factory
 
