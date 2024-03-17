@@ -62,4 +62,16 @@ public class Student {
 
 }
 
+public class Client {
+    public static void main(String[] args) {
+        Student s1 = Student.getBuilder()
+                .setName("Mohit")
+                .setPsp(80.6)
+                .setGradYear(2020)
+                .build();
+
+        System.out.println(s1);
+    }
+}
+
 ```
