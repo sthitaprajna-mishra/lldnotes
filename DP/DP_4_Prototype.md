@@ -85,6 +85,29 @@ public class Bus extends Vehicle {
 }
 ```
 
+### Shallow Copy vs Deep Copy in Prototype Pattern
+
+```java
+public class Car extends Vehicle {
+    private int topSpeed;
+    public GSPSystem gpsSystem;
+
+    public Car() {}
+
+    public Car(Car otherCar) {
+        super(otherCar);
+        this.topSpeed = otherCar.topSpeed;
+        // this.gpsSystem = new GpsSystem(); // -> This is shallow copy
+        this.gpsSystem = other.gpsSystem.clone(); // --> This is deep copy
+    }
+
+    @Override
+    public Car clone() {
+        return new Car(this);
+    }
+}
+```
+
 ### Prototype with Registry
 
 ```java
