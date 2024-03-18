@@ -61,7 +61,11 @@ public class Student {
     }
 
 }
+```
 
+#### Client code -
+
+```java
 public class Client {
     public static void main(String[] args) {
         Student s1 = Student.getBuilder()
@@ -73,5 +77,4 @@ public class Client {
         System.out.println(s1);
     }
 }
-
 ```
