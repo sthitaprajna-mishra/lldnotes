@@ -51,3 +51,15 @@
   - Classes that implement the interface can choose to override the default method if they want to provide a different implementation.
 
 - **Static Method in Interfaces**
+
+  - Interfaces were enhanced to support the declaration of static methods.
+
+  - Static methods in interfaces provide a way to define utility methods that are related to the interface's functionality but do not depend on any specific implementation.
+
+- **Functional Interface**
+
+  - Java 8 introduced the `@FunctionalInterface` annotation, which can be used to declare functional interfaces although using the annotation is not compulsory.
+
+  - Functional interfaces are interfaces that contain exactly only one abstract method and can be used effectively with lambda expressions.
+
+  - The interface can have any number of default/static methods.
