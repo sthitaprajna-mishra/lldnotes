@@ -107,4 +107,4 @@ public class Client {
 
 #### Output -
 
-![Output for Flyweight pattern code](OutputFlyweight.png)
+![Output for Flyweight pattern code](assets/OutputFlyweight.png)

@@ -58,7 +58,7 @@ public class VegBurger implements Burger {
 }
 ```
 
-![Simple Factory Idiom](UMLSimpleFactory.png)
+![Simple Factory Idiom](assets/UMLSimpleFactory.png)
 _URL: https://youtu.be/EdFq_JIThqM?si=LK8m_6OsiOskVp2y&t=201_
 
 ### Factory Method
@@ -112,10 +112,10 @@ public class VegBurger implements Burger {
 }
 ```
 
-![Client Factory Method](ClientFactoryMethod.png)
+![Client Factory Method](assets/ClientFactoryMethod.png)
 _URL: https://youtu.be/EdFq_JIThqM?si=v6XMnnNHPIC20csr&t=361_
 
-![UML Factory Method](UMLFactoryMethod.png)
+![UML Factory Method](assets/UMLFactoryMethod.png)
 _URL: https://youtu.be/EdFq_JIThqM?si=ImdWQKmsJuVx2pYr&t=399_
 
 ### Abstract Factory
@@ -210,5 +210,5 @@ public class VegPizza implements Pizza {
 
 ```
 
-![UML Abstract Factory](UMLAbstractFactory.png)
+![UML Abstract Factory](assets/UMLAbstractFactory.png)
 _URL: https://youtu.be/QNpwWkdFvgQ?si=S-5dmvbenlWZDhoZ&t=324_

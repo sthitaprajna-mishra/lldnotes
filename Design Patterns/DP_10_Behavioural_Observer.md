@@ -109,4 +109,4 @@ public class Client {
 
 #### Code Output -
 
-![Observer Pattern](OutputObserver.png)
+![Observer Pattern](assets/OutputObserver.png)
