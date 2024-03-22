@@ -2,13 +2,15 @@
 
 ### Builder Pattern
 
-A creational design pattern that allows us to create a complex object on a step by step basis.
+- Creational Design Pattern
 
-For a complex object, the initialization of its many fields is buried under a monstrou constructor.
+- Allows us to create a complex object on a step by step basis.
 
-If an object has many parameters, then every time we need to create an object and don't need some of the parameters, then we would either need to pass in NULL or have multiple overloaded constructors.
+- For a complex object, the initialization of its many fields is buried under a monstrou constructor.
 
-In this pattern, we extract the task of object creation to its own class and move it to separat bjects called builders.
+- If an object has many parameters, then every time we need to create an object and don't need some of the parameters, then we would either need to pass in NULL or have multiple overloaded constructors.
+
+- In this pattern, we extract the task of object creation to its own class and move it to separat bjects called builders.
 
 ```java
 

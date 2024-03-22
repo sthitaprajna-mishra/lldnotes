@@ -2,6 +2,8 @@
 
 ### Flyweight Pattern
 
+- Structural Design Pattern
+
 - The Flyweight design pattern aims to minimize memory usage by sharing common data between multiple objects.
 
 - It is especially useful when dealing with large numbers of similar objects to improve performance and reduce memory footprint.

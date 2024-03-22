@@ -2,9 +2,11 @@
 
 ### Prototype and Registry Pattern
 
-Prototype is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
+- Creational Design Pattern
 
-This pattern delegates the cloning process to the actual objects that are being cloned.
+- Lets you copy existing objects without making your code dependent on their classes.
+
+- This pattern delegates the cloning process to the actual objects that are being cloned.
 
 ### Prototype - Interface
 

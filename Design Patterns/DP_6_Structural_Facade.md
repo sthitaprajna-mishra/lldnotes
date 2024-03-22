@@ -2,7 +2,9 @@
 
 ### Facade Pattern
 
-- A structural design pattern that provides a simplified interface to a complex system of classes, interfaces, or subsystems.
+- Structural Design Pattern
+
+- Provides a simplified interface to a complex system of classes, interfaces, or subsystems.
 
 - It hides the complexities of the subsystem and provides a single interface to the client.
 

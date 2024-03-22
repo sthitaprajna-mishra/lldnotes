@@ -2,6 +2,8 @@
 
 ### Adapter Pattern
 
+- Structural Design Pattern
+
 - Allows incompatiable objects to work together by providing a wrapper that converts the interface of one class into another interface.
 
 ```java

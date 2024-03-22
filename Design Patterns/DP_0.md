@@ -1,4 +1,4 @@
-# Design Patterns Notes - 1
+# Design Patterns Notes - 0
 
 ### What are Design Patterns?
 

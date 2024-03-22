@@ -2,7 +2,10 @@
 
 ## Strategy Pattern
 
-- The Strategy design pattern is a behavioral design pattern that defines a family of algorithms and makes them interchangeable.
+- Behavioral Design Pattern
+
+- The Strategy design pattern defines a family of algorithms and makes them interchangeable.
+
 - This pattern is especially useful when you have a family of algorithms, and you want to be able to switch between them at runtime.
 
 ```java

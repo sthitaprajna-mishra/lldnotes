@@ -2,9 +2,12 @@
 
 ## Factory Patterns
 
-- [**Simple Factory**](#simple-factory)
-- [**Factory Method**](#factory-method)
-- [**Abstract Factory**](#abstract-factory)
+- Creational Design Pattern
+
+- Factory patterns can be classified into 3 more patterns -
+  - [**Simple Factory**](#simple-factory)
+  - [**Factory Method**](#factory-method)
+  - [**Abstract Factory**](#abstract-factory)
 
 ### Simple Factory
 

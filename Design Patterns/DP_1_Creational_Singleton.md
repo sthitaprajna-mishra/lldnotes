@@ -2,7 +2,9 @@
 
 ### Singleton Pattern
 
-This ensures that a class has only one instance, and provides a global point of access to it.
+- Creational Design Pattern
+
+- This ensures that a class has only one instance, and provides a global point of access to it.
 
 ### Naive Singleton
 

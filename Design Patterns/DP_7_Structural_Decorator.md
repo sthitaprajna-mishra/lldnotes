@@ -2,6 +2,8 @@
 
 ## Decorator Pattern
 
+- Structural Design Pattern
+
 - Lets you attach new behaviours to an object by placing them inside a special wrapper that contains these behaviours.
 
 - It's useful when you want to add new functionality to objects without subclassing.
