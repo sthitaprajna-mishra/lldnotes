@@ -16,7 +16,7 @@
 public class Restaurant {
     public Burger orderBurger(String request) {
         SimpleBurgerFactory burgerFactory = new SimpleBurgerFactory();
-        Burger burger = burgerFactory.createBurger();
+        Burger burger = burgerFactory.createBurger("VEG");
         burger.prepare();
         return burger;
     }
