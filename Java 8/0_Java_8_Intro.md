@@ -30,6 +30,12 @@
 
   - This API addresses many shortcomings of the legacy `java.util.Date` and `java.util.Calendar` classes, including immutability, thread safety, and better support for time zones.
 
+  - **Optional**
+
+  - Optional is a container object that may or may not contain a non-null value.
+
+  - It's designed to provide a more expressive and safer way of handling null values, thereby reducing the likelihood of NullPointerException errors.
+
 - **Method Reference and Constructor Reference**
 
   - A way to refer to methods or constructors without invoking them.
