@@ -6,7 +6,7 @@
 
 - Allows us to create a complex object on a step by step basis.
 
-- For a complex object, the initialization of its many fields is buried under a monstrou constructor.
+- For a complex object, the initialization of its many fields is buried under a monstrous constructor.
 
 - If an object has many parameters, then every time we need to create an object and don't need some of the parameters, then we would either need to pass in NULL or have multiple overloaded constructors.
 

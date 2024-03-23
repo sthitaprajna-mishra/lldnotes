@@ -45,11 +45,11 @@ public interface BankAPIAdapter {
     public boolean sendFunds(String accNumber, double funds);
 }
 
-public class YesBankAPI implements BankAPIAdapter {
+public class YesBankAPIAdapter implements BankAPIAdapter {
     // implement the methods of the interface
 }
 
-public class ICICIBankAPI implements BankAPIAdapter {
+public class ICICIBankAPIAdapter implements BankAPIAdapter {
     // implement the methods of the interface
 }
 ```
