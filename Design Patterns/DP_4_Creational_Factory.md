@@ -13,7 +13,7 @@
 
 - This defines a class that encapsulates the object creation for the product.
 - This is NOT actually a design pattern; it is more of a programming idiom.
-- This is often mistaken for the Factroy pattern but it is not a REAL pattern.
+- This is often mistaken for the Factory pattern but it is not a REAL pattern.
 
 ```java
 public class Restaurant {
@@ -130,41 +130,38 @@ public abstract class Restaurant {
         return burger;
     }
 
-    public Burger orderPizza() {
+    public Pizza orderPizza() {
         Pizza pizza = createPizza();
         pizza.prepare();
         return pizza;
     }
 
     public abstract Burger createBurger();
-    public abstract Burger createPizza();
+    public abstract Pizza createPizza();
 }
 
-public class ChickenBurgerRestaurant extends Restaurant {
-    @Override
-    public Burger createBurger() {
-        return new ChickenBurger();
-    }
-}
 
-public class VegBurgerRestaurant extends Restaurant {
+public class VegRestaurant extends Restaurant {
     @Override
-    public Burger createBurger() {
+    public VegBurger createBurger() {
         return new VegBurger();
     }
-}
 
-public class ChickenPizzaRestaurant extends Restaurant {
     @Override
-    public Burger createPizza() {
-        return new ChickenPizza();
+    public VegPizza createPizza() {
+        return new VegPizza();
     }
 }
 
-public class VegPizzaRestaurant extends Restaurant {
+public class ChickenRestaurant extends Restaurant {
     @Override
-    public Pizza createPizza() {
-        return new VegPizza();
+    public ChickenBurger createBurger() {
+        return new ChickenBurger();
+    }
+
+    @Override
+    public ChickenPizza createPizza() {
+        return new ChickenPizza();
     }
 }
 
@@ -174,11 +171,12 @@ public interface Burger {
 
 public class ChickenBurger implements Burger {
     @Override
-    void prepare() {
+    public void prepare() {
         // prepare chicken
         // business logic
     }
 }
+
 
 public class VegBurger implements Burger {
     @Override
