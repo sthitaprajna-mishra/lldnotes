@@ -11,53 +11,61 @@
 - This helps in decoupling the client from the subsystem, making the client code easier to understand and maintain.
 
 ```java
-// Subsystem class 1
-class CPU {
-    public void freeze() {
-        System.out.println("CPU is freezing");
-    }
-
-    public void jump(long position) {
-        System.out.println("Jumping to position: " + position);
-    }
-
-    public void execute() {
-        System.out.println("CPU is executing commands");
+// Subsystem - AccountManagement
+class AccountManagement {
+    public void createAccount(String accountType) {
+        System.out.println("Creating a new " + accountType + " account");
+        // Implementation details...
     }
 }
 
-// Subsystem class 2
-class Memory {
-    public void load(long position, byte[] data) {
-        System.out.println("Loading data at position: " + position);
+// Subsystem - TransactionProcessing
+class TransactionProcessing {
+    public void deposit(int accountId, double amount) {
+        System.out.println("Depositing $" + amount + " to account ID " + accountId);
+        // Implementation details...
+    }
+
+    public void withdraw(int accountId, double amount) {
+        System.out.println("Withdrawing $" + amount + " from account ID " + accountId);
+        // Implementation details...
     }
 }
 
-// Subsystem class 3
-class HardDrive {
-    public byte[] read(long lba, int size) {
-        System.out.println("Reading data from hard drive");
-        return new byte[size];
+// Subsystem - CustomerService
+class CustomerService {
+    public void updateAddress(int customerId, String newAddress) {
+        System.out.println("Updating address for customer ID " + customerId + " to " + newAddress);
+        // Implementation details...
     }
 }
 
-// Facade class
-class ComputerFacade {
-    private CPU cpu;
-    private Memory memory;
-    private HardDrive hardDrive;
+// Facade
+class BankFacade {
+    private AccountManagement accountManagement;
+    private TransactionProcessing transactionProcessing;
+    private CustomerService customerService;
 
-    public ComputerFacade() {
-        this.cpu = new CPU();
-        this.memory = new Memory();
-        this.hardDrive = new HardDrive();
+    public BankFacade() {
+        this.accountManagement = new AccountManagement();
+        this.transactionProcessing = new TransactionProcessing();
+        this.customerService = new CustomerService();
     }
 
-    public void start() {
-        cpu.freeze();
-        memory.load(0, hardDrive.read(0, 1024));
-        cpu.jump(0);
-        cpu.execute();
+    public void openAccount(String accountType) {
+        accountManagement.createAccount(accountType);
+    }
+
+    public void deposit(int accountId, double amount) {
+        transactionProcessing.deposit(accountId, amount);
+    }
+
+    public void withdraw(int accountId, double amount) {
+        transactionProcessing.withdraw(accountId, amount);
+    }
+
+    public void updateAddress(int customerId, String newAddress) {
+        customerService.updateAddress(customerId, newAddress);
     }
 }
 ```
@@ -65,10 +73,15 @@ class ComputerFacade {
 #### Client code -
 
 ```java
-public class Client {
+public class Main {
     public static void main(String[] args) {
-        ComputerFacade computer = new ComputerFacade();
-        computer.start();
+        BankFacade bankFacade = new BankFacade();
+
+        // Using facade to perform operations
+        bankFacade.openAccount("Savings");
+        bankFacade.deposit(123456, 1000);
+        bankFacade.withdraw(123456, 500);
+        bankFacade.updateAddress(987654, "123 Main Street");
     }
 }
 ```
