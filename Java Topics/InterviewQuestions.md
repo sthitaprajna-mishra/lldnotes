@@ -1,5 +1,23 @@
 # Basic Java Interview Questions
 
+## Contents
+
+1. [What is class and object?](#1-what-is-class-and-object)
+2. [Which class is the superclass of all objects in Java and why?](#2-which-class-is-the-superclass-of-all-objects-in-java-and-why)
+3. [How can we say that a particular language is an object-oriented programming language?](#3-how-can-we-say-that-a-particular-language-is-an-object-oriented-programming-language)
+4. [Difference between procedural programming language and object-oriented programming language.](#4-difference-between-procedural-programming-language-and-object-oriented-programming-language)
+5. [What is encapsulation?](#5-what-is-encapsulation)
+6. [What do you mean by tightly encapuslated?](#6-what-do-you-mean-by-tightly-encapuslated)
+7. [What are varargs?](#7-what-are-varargs)
+8. [What do you mean by the terms Composition and Aggregation?](#8-what-do-you-mean-by-the-terms-composition-and-aggregation)
+9. [What are daemon threads? How are they different from non-daemon threads?](#9-what-are-daemon-threads-how-are-they-different-from-non-daemon-threads)
+10. [What is serialization? Explain the use of the transient keyword.](#10-what-is-serialization-explain-the-use-of-the-transient-keyword)
+11. [What is Reflection in Java?](#11-what-is-reflection-in-java)
+12. [Explain the Iterable and Iterator interfaces.](#12-explain-the-iterable-and-iterator-interfaces)
+13. [Explain the Comparable and Comparator interfaces.](#13-explain-the-comparable-and-comparator-interfaces)
+14. [What if 2 interfaces have same default method signatures but different implementation and a class implements both the interfaces, how to know which interface's default implementation will be called?](#14-what-if-2-interfaces-have-same-default-method-signatures-but-different-implementation-and-a-class-implements-both-the-interfaces-how-to-know-which-interfaces-default-implementation-will-be-called)
+15. [What is the need of a ConcurrentHashMap and how is it different from HashMap? Also, what are fail-fast and fail-safe iterators?](#15-what-is-the-need-of-a-concurrenthashmap-and-how-is-it-different-from-hashmap-also-what-are-fail-fast-and-fail-safe-iterators)
+
 ### 1. What is class and object?
 
 #### **Class**

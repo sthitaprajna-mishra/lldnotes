@@ -1,5 +1,16 @@
 # Exception Handling
 
+## Contents
+
+1. [What is an exception?](#1-what-is-an-exception)
+2. [Describe in brief the important keywords in exception handling in Java.](#2-describe-in-brief-the-important-keywords-in-exception-handling-in-java)
+3. [How to use multiple catch blocks?](#3-how-to-use-multiple-catch-blocks)
+4. [What is the exception hierarchy in Java?](#4-what-is-the-exception-hierarchy-in-java)
+5. [What are the scenarios where finally block is not executed?](#5-what-are-the-scenarios-where-finally-block-is-not-executed)
+6. [What are checked and unchecked exceptions?](#6-what-are-checked-and-unchecked-exceptions)
+7. [What are chained exceptions?](#7-what-are-chained-exceptions)
+8. [What is a multi-catch statement?](#8-what-is-a-multi-catch-statement)
+
 ### 1. What is an exception?
 
 An exception is an abnormal condition that arises in a code sequence at run time which disrupts the flow of normal program execution that unless handled could lead to the termination of the program.
