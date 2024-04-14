@@ -1,5 +1,13 @@
 # Java Concurrency and MultiThreading - Basics
 
+## Contents
+
+1. [Create Threads](#1-create-threads)
+2. [Thread Names](#2-thread-names)
+3. [Executors and ExecutorService](#3-executors-and-executorservice)
+4. [Runnable and Callable](#4-runnable-and-callable)
+5. [Mutex and Semaphore](#5-mutex-and-semaphore)
+
 The main stage is set by the **primary thread**, launched by the Java Virtual Machine (JVM) when your application begins its performance.
 
 ## 1. Create Threads
@@ -156,7 +164,7 @@ main running in main method
 MyRunnableMod running
 ```
 
-## 3. Executors and ExecutoService
+## 3. Executors and ExecutorService
 
 The `Executors` class and the `ExecutorService` interface provide a framework for managing
 and controlling the execution of concurrent tasks using a pool of worker threads.
@@ -165,13 +173,13 @@ These components are part of the `java.util.concurrent package`, which
 offers a higher-level concurrency framework compared to traditional
 thread-based approaches.
 
-### newFixedThreadPool and newCachedThreadPool
+### 3.1. newFixedThreadPool and newCachedThreadPool
 
 `ExecutorService.newFixedThreadPool` and `ExecutorService.newCachedThreadPool` are
 two methods provided by the `ExecutorService` interface in Java to
 create thread pools with different characteristics.
 
-#### 1. `newFixedThreadPool(int nThreads)` method:
+#### 3.1.1. `newFixedThreadPool(int nThreads)` method:
 
 - **Description:** This method creates a fixed-size thread pool where the number of threads
   remains constant. The pool has a specified number of threads (nThreads)
@@ -211,7 +219,7 @@ public class FixedThreadPoolExample {
 }
 ```
 
-#### 2. `newCachedThreadPool()` method:
+#### 3.1.2. `newCachedThreadPool()` method:
 
 - **Description:** This method creates a thread pool that dynamically
   adjusts its size based on the number of active tasks.
@@ -325,7 +333,7 @@ public class Sorter implements Callable<List<Integer>> {
 }
 ```
 
-### Client Code -
+**Client Code**
 
 ```java
 public class Client {
@@ -344,6 +352,104 @@ public class Client {
         }
 
         System.out.println(result.toString());
+    }
+}
+```
+
+## 5. Mutex and Semaphore
+
+### 5.1. Mutex
+
+A mutex (is derived from _mutual exclusion_) or lock is a special mecahnism for synchronizing threads. One is "attached" to every object in Java — it doesn't matter if you use standard classes or create your own classes, e.g. Cat and Dog: **all objects of all classes have a mutex**.
+
+This is achieved via the `synchronized` keyword.
+
+```java
+public class MutexExample {
+    private static int counter = 0;
+
+    public static synchronized void increment() {
+        counter++;
+    }
+
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                increment();
+            }
+        });
+
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                increment();
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Counter: " + counter);
+    }
+}
+```
+
+Another famous use case of mutex is the thread-safe implementation of the Singleton design pattern.
+
+### 5.2. Semaphore
+
+Semaphore is a synchronization mechanism that can be used to control access to a shared resource by limiting the number of threads that can access the resource concurrently.
+
+```java
+public class ConcurrentTask implements Runnable {
+    private Semaphore semaphore;
+    private int id;
+
+    ConcurrentTask(Semaphore semaphore, int id) {
+        this.semaphore = semaphore;
+        this.id = id;
+    }
+
+    @Override
+    public void run() {
+        try {
+            semaphore.acquire(); // allow only 2 threads
+            System.out.println("Thread " + Thread.currentThread().getName() + " started work on task " + id + "...");
+            // simulating work
+            Thread.sleep(2000);
+            System.out.println("Thread " + Thread.currentThread().getName() + " finished work on task " + id);
+        }
+        catch(InterruptedException e) {
+            System.out.println("Oops!");
+            System.out.println(e.getMessage());
+        }
+        finally {
+            semaphore.release();
+        }
+    }
+}
+```
+
+**Client Code**
+
+```java
+public class Client {
+    public static void main(String[] args) {
+        ExecutorService es = Executors.newFixedThreadPool(20);
+        Semaphore semaphore = new Semaphore(2);
+
+        for(int i = 1; i <= 10; i++) {
+            ConcurrentTask task = new ConcurrentTask(semaphore, i);
+            es.execute(task);
+        }
+
+        es.shutdown();
     }
 }
 ```
